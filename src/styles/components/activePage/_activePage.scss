@@ -1,0 +1,34 @@
+// TextAndStats.jsx
+
+.textAndStats-container {
+   background-color: blue;
+   max-width: 1400px;
+   min-height: 50vh;
+   width: 95vw;
+   padding: .5rem;
+}
+
+// statsContainer.jsx
+
+.statsContainer {
+   display: flex;
+   background: #ccc;
+   justify-content: center;
+   align-items: center;
+}
+
+// typingText.jsx
+.typingText-container {
+   background: yellow;
+   
+}
+
+// buttonsContainer.jsx
+.buttonsContainer {
+   margin-top: 1rem;
+   background-color: purple;
+   padding: .5rem;
+   display: flex;
+   justify-content: center;
+}
+

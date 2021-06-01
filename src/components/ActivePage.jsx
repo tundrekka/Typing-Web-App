@@ -1,5 +1,5 @@
 import React from 'react'
-import { Buttons } from './activePage/Buttons'
+import { ButtonsContainer } from './activePage/ButtonsContainer'
 import { TextAndStats } from './activePage/TextAndStats'
 
 export const ActivePage = () => {
@@ -7,7 +7,7 @@ export const ActivePage = () => {
    return (
       <div>
          <TextAndStats />
-         <Buttons />
+         <ButtonsContainer />
       </div>
    )
 }
