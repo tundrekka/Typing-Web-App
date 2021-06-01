@@ -1,0 +1,10 @@
+.twa-container {
+   background-color: #fff;
+   border: 2px solid red;
+   display: grid;
+   grid-template-columns: 80% 20%;
+   max-width: 1400px;
+   min-height: 50vh;
+   width: 95vw;
+   padding: .5rem;
+}

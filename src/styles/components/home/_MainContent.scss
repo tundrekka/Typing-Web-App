@@ -1,0 +1,9 @@
+@import './Dropdown';
+.main-container {
+   background-color: #c0c0c0;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   padding: 1rem;
+}
