@@ -1,6 +1,6 @@
 import React from 'react'
-import { MainContent } from './home/MainContent'
-import { Sidebar } from './sidebar/Sidebar'
+import { MainContent } from './homePage/MainContent'
+import { Sidebar } from './ui/sidebar/Sidebar'
 
 export const HomePage = () => {
    return (

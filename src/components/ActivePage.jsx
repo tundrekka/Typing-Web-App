@@ -1,13 +1,13 @@
 import React from 'react'
-import { dataText } from '../data/text'
+import { Buttons } from './activePage/Buttons'
+import { TextAndStats } from './activePage/TextAndStats'
 
 export const ActivePage = () => {
 
-   const datatext = dataText()
-
    return (
       <div>
-         <pre>{datatext}</pre>
+         <TextAndStats />
+         <Buttons />
       </div>
    )
 }

@@ -7,7 +7,7 @@ import {
  } from 'react-router-dom';
 import { ActivePage } from '../components/ActivePage';
 import { HomePage } from '../components/HomePage';
-import { Navbar } from '../components/navbar/Navbar';
+import { Navbar } from '../components/ui/navbar/Navbar';
 
 export const AppRouter = () => {
    return (
