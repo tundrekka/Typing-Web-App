@@ -19,7 +19,8 @@
 
 // typingText.jsx
 .typingText-container {
-   background: yellow;
+   background: rgb(255, 255, 116);
+   font-size: 1.3rem;
    
 }
 
@@ -30,5 +31,16 @@
    padding: .5rem;
    display: flex;
    justify-content: center;
+}
+
+// succestext
+.success-text {
+   color: lime;
+}
+.border-text {
+   border: 1px solid black
+}
+.fail-text {
+   color: red;
 }
 

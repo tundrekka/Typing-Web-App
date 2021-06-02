@@ -1,9 +1,19 @@
 import React from 'react'
+import { dataForEach } from '../../helpers/dataForEach'
 
 export const TypingText = () => {
+
+   const datasplit = dataForEach()
+
    return (
       <div className="typingText-container">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugit! Consequuntur impedit molestiae atque ipsum facilis doloremque distinctio nisi reprehenderit exercitationem consequatur nemo iusto voluptatum, vitae voluptatibus ea itaque libero.</p>
+         {
+            datasplit.map( ( letter, index ) => 
+               ( letter === '\n' ) 
+               ? <span key={index}> -<br/></span>
+               : <span key={index}>{letter}</span> 
+            )
+         }
       </div>
    )
 }
