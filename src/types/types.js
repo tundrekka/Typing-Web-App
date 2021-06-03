@@ -1,8 +1,10 @@
 
 export const types = {
-   typingLogicTextarea: '[TL] set textarea value',
-   typingLogicTypingText: '[TL] typing text',
-   typingLogicPlusIterator: '[TL] +1 iterator',
-   typingLogicResetIterator: '[TL] reset iterator',
-   typingLogicMinusIterator: '[TL] -1 iterator',
+   typingLogicTypingText: '[TL] set typing text',
+
+   uiSetActiveTrue: '[UI] Set active true',
+   uiSetActiveFalse: '[UI] Set active false',
+   uiSetFinished: '[UI] Set finished',
+   uiRestart: '[UI] Restart',
+   uiClean: '[UI] Clean'
 }

@@ -8,11 +8,14 @@ export const TypingText = () => {
    return (
       <div className="typingText-container">
          {
-            datasplit.map( ( letter, index ) => 
-               ( letter === '\n' ) 
-               ? <span key={index}> -<br/></span>
-               : <span key={index}>{letter}</span> 
-            )
+            datasplit.map( ( letter, index ) => {
+               
+               if( letter === '\n' ) return <span key={index}> -<br/></span>
+               if( letter === ' ' ) return <span className="blank" key={index}>.</span>
+               else return <span key={index}>{letter}</span> 
+               
+            })
+            
          }
       </div>
    )

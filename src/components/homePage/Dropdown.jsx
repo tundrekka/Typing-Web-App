@@ -1,9 +1,15 @@
 import React from 'react'
+import { useForm } from '../../hooks/useForm';
 
 export const Dropdown = () => {
-   // http://localhost:3000/
+
+   const [ formValues, handleInputChange ] = useForm({
+      demoText: '1'
+   })
+   const { demoText } = formValues
+   
    return (
-      <select className="main-select" name="demo-text" id="demo-text">
+      <select onChange={handleInputChange} className="main-select" name="demoText" id="demo-text">
          <option value="1">1</option>
          <option value="2">2</option>
          <option value="3">3</option>
