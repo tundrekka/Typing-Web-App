@@ -2,8 +2,9 @@ import React from 'react'
 
 export const TextContent = () => {
    return (
-      <div>
-         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, sed eos quasi, temporibus quidem aut fugiat voluptate optio dicta, quis minima ipsa. Vel minima sit, ratione nostrum eos nesciunt nam.</p>
+      <div className="text-content">
+         <p>Choose one demo-text from the above dropdown menu and click <b>Start Typing</b></p>
+         <p>This web aplication is made with react. I'm not the best with UI, I was focused mainly in the functionality and UX of this app</p>
       </div>
    )
 }

@@ -1,17 +1,18 @@
 import React from 'react'
-import { dataForEach } from '../../helpers/dataForEach'
+import { useSelector } from 'react-redux'
 
 export const TypingText = () => {
-
-   const datasplit = dataForEach()
+   const { typingText } = useSelector( state => state.typingL )
+   const { active } = useSelector( state => state.ui )
+   const demoText = typingText.split( '' )
 
    return (
-      <div className="typingText-container">
+      <div className={`typingText-container ${ ( active ) && 'activeContainer'  }`} >
          {
-            datasplit.map( ( letter, index ) => {
+            demoText.map( ( letter, index ) => {
                
-               if( letter === '\n' ) return <span key={index}> -<br/></span>
-               if( letter === ' ' ) return <span className="blank" key={index}>.</span>
+               if( letter === '\n' ) return <span key={index}> \n<br/><br/></span>
+               if( letter === ' ' ) return <span className="blank" key={index}></span>
                else return <span key={index}>{letter}</span> 
                
             })

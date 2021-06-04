@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { restart, setActive, setFalse } from '../../actions/ui'
-import { dataForEach } from '../../helpers/dataForEach'
 import { logic } from '../../helpers/logic'
 
-export const Buttons = () => {
+export const ButtonsAndLogic = () => {
    // Hooks
    const dispatch = useDispatch()
    const { finished, active } = useSelector( state => state.ui )
@@ -15,28 +14,30 @@ export const Buttons = () => {
    const [ startStop, setStartStop ] = useState( false )
 
    /* This effect is responsible of the main Typing logic  */
+   const { typingText } = useSelector( state => state.typingL )
+   const demoText = typingText.split( '' )
    let iterator = useRef( 0 )
    const container = document.querySelector( '.typingText-container' )
+
    useEffect( () => {
       
-      const datatext = dataForEach()
-      const datalength = datatext.length
+      const datalength = demoText.length
 
       const callbackFunction = ( event ) => {
-         logic( event, container, datatext, datalength, iterator, dispatch )
+         logic( event, container, demoText, datalength, iterator, dispatch )
       }
 
       if( active ) {
-         document.addEventListener( 'keypress', callbackFunction )
+         document.addEventListener( 'keydown', callbackFunction )
       } else {
-         document.removeEventListener( 'keypress', callbackFunction )
+         document.removeEventListener( 'keydown', callbackFunction )
       }
 
       return () => {
-         document.removeEventListener( 'keypress', callbackFunction )
+         document.removeEventListener( 'keydown', callbackFunction )
       }
 
-   }, [ active, dispatch, container ] )
+   }, [ active, dispatch, container, demoText ] )
    // end hooks
 
    // handlers
@@ -52,25 +53,27 @@ export const Buttons = () => {
    const handleRestart = () => {
       setStartStop( false )
       dispatch( restart() )
+      document.getElementById( 'restart' ).blur()
+
       iterator.current = 0
       // reset and remove the classes for all the span elements
       const spans = [...container.children]
       spans.forEach( span => {
-         span.className = ''
+         span.classList.remove( 'success-text' )
+         span.classList.remove( 'fail-text' )
       })
    }
 
+   let component;
+   if( active && !finished ) component = <Button onClick={ handleStop } variant="contained" color="primary">Stop</Button>
+   else if( !active && !finished && startStop ) component = <Button autoFocus id="start" onClick={ handleStart } variant="contained" color="primary">Continue</Button>
+   else if( !active && !finished ) component = <Button autoFocus id="start" onClick={ handleStart } variant="contained" color="primary">Start</Button>
+   else component = ''
+
    return (
       <>
-         {
-            ! active
-            ? <Button id="start" onClick={ handleStart } variant="contained" color="primary">Start</Button>
-            : <Button onClick={ handleStop } variant="contained" color="primary">Stop</Button>
-         }
-         {
-            ( finished || startStop )
-            && <Button autoFocus id="restart" onClick={handleRestart} variant="contained" color="secondary" >Restart</Button>
-         }
+         {component}
+         <Button id="restart" onClick={handleRestart} variant="contained" color="secondary" >Restart</Button>
          <Link to="/">
             <Button variant="contained" color="primary" >Home</Button>
          </Link>

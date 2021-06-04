@@ -1,6 +1,18 @@
 .sidebar{
-   background-color: purple;
+   background-color: $secondary-dark;
+   text-align: center;
+   border-radius: $border-radius;
+   max-width: 500px;
+   padding: .5rem;
+   padding-bottom: 1rem;
 }
-.sidebar-card {
-   background-color: yellow;
+@media screen and (max-width: $lg) {
+   .sidebar {
+      justify-self: center;
+      width: 500px;
+      display: none;
+   }
 }
+// .sidebar-card {
+//    background-color: $secondary ;
+// }

@@ -4,19 +4,20 @@ import {
    BrowserRouter as Router,
    Switch,
    Route,
+   Redirect,
  } from 'react-router-dom';
 import { ActivePage } from '../components/ActivePage';
 import { HomePage } from '../components/HomePage';
-import { Navbar } from '../components/ui/navbar/Navbar';
 
 export const AppRouter = () => {
    return (
       <Router>
-         <Navbar />
+         {/* <Navbar /> */}
          <div>
             <Switch>
-               <Route path="/typing" component={ ActivePage } />
+               <Route exact path="/typing/:demoTextId" component={ ActivePage } />
                <Route path="/" component={ HomePage } />
+               <Redirect to="/" />
             </Switch>
          </div>
       </Router>

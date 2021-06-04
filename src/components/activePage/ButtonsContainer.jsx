@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { clean } from '../../actions/ui'
-import { Buttons } from './Buttons'
+import { ButtonsAndLogic } from './ButtonsAndLogic'
 
 export const ButtonsContainer = () => {
    const dispatch = useDispatch()
@@ -14,7 +14,7 @@ export const ButtonsContainer = () => {
 
    return (
       <div className="buttonsContainer">
-         <Buttons />
+         <ButtonsAndLogic />
       </div>
    )
 }

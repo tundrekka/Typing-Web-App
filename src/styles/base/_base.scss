@@ -9,12 +9,16 @@ body {
    font-family: Verdana, Geneva, Tahoma, sans-serif;
    background-color: $bg-color;
    box-sizing: border-box;
-   color: black;
+   color: $text-white;
    display: flex;
    justify-content: center;
    margin: 0;
 }
 a {
    text-decoration: none;
+}
+
+button {
+   font-weight: 600 !important;
 }
 

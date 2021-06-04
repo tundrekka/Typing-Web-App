@@ -1,46 +1,129 @@
 // TextAndStats.jsx
 
 .textAndStats-container {
-   background-color: blue;
+   background-color: $secondary;
    max-width: 1400px;
    min-height: 50vh;
-   width: 95vw;
-   padding: .5rem;
+   width: auto;
+   padding: 1rem;
+   padding-top: .8rem;
+   // color: black;
+   border-radius: $border-radius;
+
 }
 
 // statsContainer.jsx
 
 .statsContainer {
    display: flex;
-   background: #ccc;
+   // background: #ccc;
    justify-content: center;
    align-items: center;
+   color: $text-white;
+}
+.statusMessage {
+   margin-bottom: 5px;
+   font-weight: 600;
 }
 
 // typingText.jsx
 .typingText-container {
-   background: rgb(255, 255, 116);
+   margin-top: .5rem;
+   border-radius: 6px;
+   padding: .5rem;
+   min-height: 45vh;
+   max-height: 60vh;
+   overflow-y: auto;
+   background: $primary;
    font-size: 1.3rem;
    
+}
+// scroll bar
+
+.typingText-container::-webkit-scrollbar {
+   -webkit-appearance: none;
+}
+
+.typingText-container::-webkit-scrollbar:vertical {
+   width: 10.5px;
+}
+
+.typingText-container::-webkit-scrollbar-button:increment,.typingText-container::-webkit-scrollbar-button {
+   display: none;
+} 
+
+.typingText-container::-webkit-scrollbar-thumb {
+   background-color: #797979;
+   border-radius: 5px;
+}
+
+.typingText-container::-webkit-scrollbar-track {
+   border-radius: 10px;  
+}
+// scroll bar
+
+
+
+
+
+.typingText-container.activeContainer {
+   box-shadow: 0px 0px 6px 7px lighten($primary-light,  10);
 }
 
 // buttonsContainer.jsx
 .buttonsContainer {
    margin-top: 1rem;
-   background-color: purple;
+   background-color: $secondary;
+   border-radius: $border-radius;
+
    padding: .5rem;
    display: flex;
    justify-content: center;
 }
+.buttonsContainer button {
+   margin-inline: .3rem;
+}
 
 // succestext
 .success-text {
-   color: lime;
+   color: rgba(2, 233, 2, 0.988);
 }
 .border-text {
    border: 1px solid black
 }
 .fail-text {
-   color: red;
+   color: rgba(195, 0, 0, 0.911);
 }
 
+// blank text
+.blank {
+   width: 3px;
+   height: 3px;
+   margin-inline: .159rem;
+   display: inline-block;
+   position: relative;
+   bottom: 5px;
+}
+.blank.success-text {
+   background-color: lime;
+
+}
+.blank.fail-text {
+   background-color: red;
+}
+
+#start:focus-within {
+   // animation: scale 1s linear  infinite  ;
+   box-shadow: 0px 0px 6px 4.5px lighten($primary-light,  10);
+}
+// @keyframes scale {
+//    0% {
+//       transform: scale(1);
+//    }
+//    50% {
+//       transform: scale(1.03);
+//    }
+//    100% {
+//       transform: scale(1);
+//    }
+// }

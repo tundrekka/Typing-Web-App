@@ -1,6 +1,11 @@
 import { types } from '../types/types';
 
 
-// actions para el iterador
-
-// FIN actions para el iterador
+export const setTypingTextId = ( textId ) => ({
+   type: types.typingLogicTypingTextId,
+   payload: textId
+})
+export const setTypingText = ( text ) => ({
+   type: types.typingLogicSetTypingText,
+   payload: text
+})

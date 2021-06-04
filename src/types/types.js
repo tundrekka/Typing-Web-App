@@ -1,6 +1,7 @@
 
 export const types = {
-   typingLogicTypingText: '[TL] set typing text',
+   typingLogicTypingTextId: '[TL] set typing text Id',
+   typingLogicSetTypingText: '[TL] set typing text',
 
    uiSetActiveTrue: '[UI] Set active true',
    uiSetActiveFalse: '[UI] Set active false',

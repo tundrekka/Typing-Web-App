@@ -5,11 +5,11 @@ export const StatusMessage = () => {
 
    const { active } = useSelector( state => state.ui )
    return (
-      <div>
+      <div className="statusMessage">
          {
             active
-            ? 'tamo activo mamawebo, tas escribiendo'
-            : 'empieza wn, no seas cagao'
+            ? 'Typing'
+            : 'Start or Continue'
          }
       </div>
    )
