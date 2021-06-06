@@ -10,7 +10,10 @@ export const TypingApp = () => {
    const theme = createMuiTheme({
       palette: {
          primary: {
-            main: '#220A32'
+            main: '#F50057'
+         },
+         secondary: {
+            main: '#1B3A4B'
          }
       }
    })

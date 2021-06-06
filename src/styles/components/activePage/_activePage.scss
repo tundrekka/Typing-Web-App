@@ -30,12 +30,13 @@
    min-height: 45vh;
    max-height: 60vh;
    overflow-y: auto;
-   background: $primary-dark;
+   // background: $primary-dark;
+   background: rgba(9, 1, 18, 0.902);
    font-size: 1.3rem;
    white-space: pre-wrap;
 }
 .typingText-container.activeContainer {
-   box-shadow: 0px 0px 6px 7px lighten($primary-light,  10);
+   box-shadow: 0px 0px 6px 4.5px lighten($primary-light,  3);
 }
 
 .success-text {
@@ -65,6 +66,9 @@
 .line-break {
    color: yellow;
 }
+.line-break > svg {
+   vertical-align: bottom;
+}
 .line-break.success-text {
    color: lime;
 }
@@ -77,7 +81,8 @@
 // <ButtonsContainer />
 .buttonsContainer {
    margin-top: 1rem;
-   background-color: $secondary;
+   // background-color: $secondary;
+   background-color: rgba(0, 0, 0, 0.65);
    border-radius: $border-radius;
 
    padding: .5rem;
@@ -90,5 +95,5 @@
 
 // focus to start/continue button
 #start:focus-within {
-   box-shadow: 0px 0px 6px 4.5px lighten($primary-light,  10);
+   box-shadow: 0px 0px 5px 2.5px lighten($primary-light,  4);
 }

@@ -80,7 +80,7 @@ export const ButtonsAndLogic = () => {
          {component}
          <Button id="restart" onClick={handleRestart} variant="contained" color="secondary" >Restart</Button>
          <Link to="/">
-            <Button variant="contained" color="primary" >Home</Button>
+            <Button variant="contained" color="secondary" >Home</Button>
          </Link>
       </>
    )

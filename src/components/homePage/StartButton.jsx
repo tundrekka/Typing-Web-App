@@ -9,7 +9,7 @@ export const StartButton = React.memo( () => {
    return (
       <div>
          <Link to={`/typing/${ typingTextId }`}>
-            <Button variant="contained" color="secondary" >Start Typing!</Button>
+            <Button variant="contained" color="primary" >Start Typing!</Button>
          </Link>
       </div>
    )

@@ -1,3 +1,4 @@
+import { KeyboardReturn } from '@material-ui/icons'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { ReloadButton } from '../utils/ReloadButton'
@@ -14,8 +15,8 @@ export const TypingText = React.memo( () => {
             loading ? <p style={{ textAlign: 'center' }}>Loading...</p>
             : demoText.map( ( letter, index ) => {
                
-               if( letter === '\n' ) return <span className="line-break" key={index}> \n<br/></span>
-               if( letter === '\t' ) return <span className="line-break" key={index}> \t </span>
+               if( letter === '\n' ) return <span className="line-break" key={index}><KeyboardReturn fontSize="small" /><br/></span>
+               // if( letter === '\t' ) return <span className="line-break" key={index}> \t</span>
                if( letter === ' ' ) return <span className="blank" key={index}></span>
                else return <span key={index}>{letter}</span> 
                
