@@ -1,7 +1,8 @@
-.twa-container {
+.home-container {
    background-color: $bg-containers;
-   border: 2px solid darken( $bg-containers, 7);
+   background-image: url(../img/purple-1.jpg);
    border-radius: $border-radius;
+   box-shadow: 1.5px 1.5px 16px 0 rgb(67, 39, 107);
    display: grid;
    grid-template-columns: 75% 25%;
    justify-content: center;
@@ -13,7 +14,39 @@
 }
 
 @media screen and (max-width: $lg) {
-   .twa-container {
+   .home-container {
       grid-template-columns: 100%;
    }
 }
+
+// <MainContent />
+.mainContent-container {
+   background-color: rgba(0, 0, 0, 0.65);
+   border-radius: $border-radius;
+   display: flex;
+   justify-content: space-around;
+   margin-right: 1rem;
+   align-items: center;
+   flex-direction: column;
+   padding: 1.5rem;
+}
+
+// <Title />
+
+// <Dropdown />
+.main-select {
+   background-color: $primary-dark;
+   padding: .2rem;
+   border-radius: .25rem;
+   color: $text-white;
+   font-size: .9rem;
+   width: 100%;
+}
+
+// <TextContent />
+.text-content {
+   line-height: 1.5;
+}
+
+// <StartButton />
+// * END <MainContent />

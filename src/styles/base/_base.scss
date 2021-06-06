@@ -1,17 +1,38 @@
-// a b c d e f g  
-// h i j k l m n o p
-// q r s t u v x y z
+/*
+   {
+    "always-semicolon": true,
+    "color-case": "upper",
+    "color-shorthand": false,
+    "eof-newline": true,
+    "leading-zero": false,
+    "sort-order-fallback": "abc",
+    "space-after-colon": " ",
+    "space-before-combinator": " ",
+    "space-after-combinator": " ",
+    "space-between-declarations": "\n",
+    "space-before-opening-brace": " ",
+    "space-after-opening-brace": "\n",
+    "space-after-selector-delimiter": " ",
+    "space-before-selector-delimiter": " ",
+    "space-before-closing-brace": "\n",
+    "strip-spaces": true,
+    "unitless-zero": true,
+    "vendor-prefix-align": true
+   }
+*/
 // twa = TypingWebApp
 @import './variables';
 @import './breakpoints';
 
 body {
+   font-display: swap;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
-   background-color: $bg-color;
+   background-image: linear-gradient( $primary, $primary-dark) ;
    box-sizing: border-box;
    color: $text-white;
    display: flex;
    justify-content: center;
+   min-height: 100vh;
    margin: 0;
 }
 a {

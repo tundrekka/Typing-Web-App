@@ -1,0 +1,20 @@
+.typingText-container::-webkit-scrollbar {
+   -webkit-appearance: none;
+}
+
+.typingText-container::-webkit-scrollbar:vertical {
+   width: 10.5px;
+}
+
+.typingText-container::-webkit-scrollbar-button:increment,.typingText-container::-webkit-scrollbar-button {
+   display: none;
+} 
+
+.typingText-container::-webkit-scrollbar-thumb {
+   background-color: #797979;
+   border-radius: 5px;
+}
+
+.typingText-container::-webkit-scrollbar-track {
+   border-radius: 10px;  
+}
