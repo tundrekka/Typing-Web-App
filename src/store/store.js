@@ -1,6 +1,6 @@
 import { combineReducers, compose, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { typingLogicReducer } from '../reducers/typingLogicReducer';
+import { textsReducer } from '../reducers/textsReducer';
 import { uiReducer } from '../reducers/uiReducer';
 
 
@@ -8,7 +8,7 @@ const composeEnhancers = ( typeof window !== 'undefined' && window.__REDUX_DEVTO
 
 
 const reducers = combineReducers({
-   typingL: typingLogicReducer,
+   texts: textsReducer,
    ui: uiReducer
 })
 

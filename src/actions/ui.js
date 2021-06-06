@@ -21,3 +21,25 @@ export const restart = () => ({
 export const clean = () => ({
    type: types.uiClean
 })
+
+export const setLastPathId = ( path ) => ({
+   type: types.uiSetLastPath,
+   payload: path
+})
+
+export const setLoadingTrue = () => ({
+   type: types.uiSetLoadingTrue,
+})
+export const setLoadingFalse = () => ({
+   type: types.uiSetLoadingFalse,
+})
+
+export const setErrorMessage = ( msg ) => ({
+   type: types.uiErrorMsg,
+   payload: msg
+})
+
+export const reloadRequest = ( state ) => ({
+   type: types.uiReloadRequest,
+   payload: state
+})

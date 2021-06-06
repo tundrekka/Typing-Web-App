@@ -14,8 +14,10 @@ export const ButtonsAndLogic = () => {
    const [ startStop, setStartStop ] = useState( false )
 
    /* This effect is responsible of the main Typing logic  */
-   const { typingText } = useSelector( state => state.typingL )
-   const demoText = typingText.split( '' )
+   const { text } = useSelector( state => state.texts )
+   // const demoText = typingTexts[0].content.split( '' )
+   const demoText = text.split( '' )
+
    let iterator = useRef( 0 )
    const container = document.querySelector( '.typingText-container' )
 
@@ -66,8 +68,11 @@ export const ButtonsAndLogic = () => {
 
    let component;
    if( active && !finished ) component = <Button onClick={ handleStop } variant="contained" color="primary">Stop</Button>
+
    else if( !active && !finished && startStop ) component = <Button autoFocus id="start" onClick={ handleStart } variant="contained" color="primary">Continue</Button>
+
    else if( !active && !finished ) component = <Button autoFocus id="start" onClick={ handleStart } variant="contained" color="primary">Start</Button>
+   
    else component = ''
 
    return (

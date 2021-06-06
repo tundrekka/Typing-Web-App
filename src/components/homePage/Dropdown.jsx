@@ -1,28 +1,45 @@
 import React from 'react'
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setTypingTextId } from '../../actions/typingLogic';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTypingTextId } from '../../actions/texts';
 import { useForm } from '../../hooks/useForm';
 
 export const Dropdown = () => {
    const dispatch = useDispatch()
+   const { typingTextsDropdown, typingTextId } = useSelector( state => state.texts )
+   const { loading } = useSelector( state => state.ui )
 
    const [ formValues, handleInputChange ] = useForm({
-      demoText: '11a'
+      demoTextId: ''
    })
-   const { demoText } = formValues
+   const { demoTextId } = formValues
 
    useEffect( () => {
       
-      dispatch( setTypingTextId( demoText ) )
+      dispatch( setTypingTextId( demoTextId ) )
 
-   }, [ demoText, dispatch ] )
+   }, [ demoTextId, dispatch ] )
+
+   useEffect( () => {
+      if( !typingTextId && typingTextsDropdown.length > 0 ) {
+         dispatch( setTypingTextId( typingTextsDropdown[0].id ) )
+      } 
+      
+   }, [ typingTextId, dispatch, typingTextsDropdown ] )
+
    return (
-      <select onChange={handleInputChange} className="main-select" name="demoText" id="demo-text">
-         <option value="11a">Primer Texto</option>
-         <option value="12b">Segundo Texto</option>
-         <option value="13c">Tercero Texto</option>
-         <option value="14d">Cuarto Texto</option>
+      <>
+       <select onChange={handleInputChange} className="main-select" name="demoTextId" id="demo-text">
+      {
+         loading && <option>Loading...</option>
+      }
+      {
+         typingTextsDropdown &&
+         typingTextsDropdown.map( text => (
+            <option key={ text.id } value={text.id}>{text.title}</option>
+         ) )
+      }
       </select>
+      </>
    )
 }

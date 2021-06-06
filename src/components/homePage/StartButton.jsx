@@ -3,9 +3,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-export const StartButton = () => {
+export const StartButton = React.memo( () => {
+   const { typingTextId } = useSelector( state => state.texts )
 
-   const { typingTextId } = useSelector( state => state.typingL )
    return (
       <div>
          <Link to={`/typing/${ typingTextId }`}>
@@ -13,4 +13,4 @@ export const StartButton = () => {
          </Link>
       </div>
    )
-}
+})

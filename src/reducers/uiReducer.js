@@ -8,7 +8,11 @@ import { types } from '../types/types';
 */
 const initialState = {
    active: false,
-   finished: false
+   finished: false,
+   lastPath: null,
+   loading: false,
+   errorMsg: false,
+   reloadRequest: false,
 } 
 
 export const uiReducer = ( state = initialState, action ) => {
@@ -42,6 +46,33 @@ export const uiReducer = ( state = initialState, action ) => {
             ...state,
             finished: false,
             active: false
+         }
+      case types.uiSetLastPath:
+         return {
+            ...state,
+            lastPath: action.payload
+         }
+      case types.uiSetLoadingTrue:
+         return {
+            ...state,
+            loading: true
+         }
+      case types.uiSetLoadingFalse:
+         return {
+            ...state,
+            loading: false
+         }
+
+      case types.uiErrorMsg:
+         return {
+            ...state,
+            errorMsg: action.payload
+         }
+
+      case types.uiReloadRequest:
+         return {
+            ...state,
+            reloadRequest: action.payload
          }
    
       default:

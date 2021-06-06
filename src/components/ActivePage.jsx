@@ -1,21 +1,39 @@
-import React, { useEffect, useMemo } from 'react'
-import { useDispatch } from 'react-redux'
-import { Redirect, useParams } from 'react-router'
-import { setTypingText } from '../actions/typingLogic'
-import { getDemoText } from '../helpers/getDemoText'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router'
+import { setFinalText, startLoadingTextById } from '../actions/texts'
+import { reloadRequest, setErrorMessage } from '../actions/ui'
+import { getTextFromStore } from '../helpers/getTextFromStore'
 import { ButtonsContainer } from './activePage/ButtonsContainer'
 import { TextAndStats } from './activePage/TextAndStats'
 
-export const ActivePage = () => {
+export const ActivePage = ({ history }) => {
 
    const dispatch = useDispatch()
+   const { textsList } = useSelector( state => state.texts )
+   const { reloadRequest: reload } = useSelector( state => state.ui )
+
    const { demoTextId } = useParams()
-   const { content } = useMemo( () => getDemoText( demoTextId ), [demoTextId] )
-   
+
    useEffect( () => {
-      dispatch( setTypingText( content ) )
-   }, [ dispatch, content ] )
-   if( !content ) return <Redirect to="/" />
+
+      // If the text exists in the store, then take it from there
+      if( textsList.length > 0 ) {
+         const text = getTextFromStore( textsList, demoTextId )
+         if( text ) {
+            dispatch( setFinalText( text ) )
+            dispatch( reloadRequest( false ) )
+            dispatch( setErrorMessage( false ) )
+
+            return
+         }
+      }
+      // if it does not exist in the store, look for it in the database
+      dispatch( startLoadingTextById( demoTextId, history ) )
+            
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [ demoTextId, dispatch, reload ] )
+   
 
    return (
       <div className="activePage-container">
