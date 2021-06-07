@@ -3,7 +3,10 @@
 import { setFinished } from '../actions/ui'
 
 export const logic = ( e, container,  datatext, datalength, ite, dispatch) => {
-
+   if(e.key === ' ') {
+      document.querySelector('#hidden').focus()
+      document.querySelector('#hidden').value = ''
+   }
    if( e.key.length > 2 && e.key !== 'Enter' && e.key !== 'Backspace') return
    const keyValue = ( e.key === 'Enter' ) ? '\n' : e.key
    

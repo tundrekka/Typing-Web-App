@@ -13,13 +13,45 @@ body {
    min-height: 100vh;
    margin: 0;
 }
+@media screen and (min-width: 1500px) {
+   html {
+      font-size: 1.15rem;
+   }
+}
+
 a {
    text-decoration: none;
+}
+#root {
+   overflow-x: hidden;
 }
 
 // sobre-escribiendo estilos de material-ui
 button {
    font-weight: 600 !important;
    font-family: 'Montserrat', Geneva, Tahoma, sans-serif !important;
+   padding: .42rem 1rem !important;
+}
+
+::-webkit-scrollbar {
+   -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+   width: 15.5px;
+}
+
+::-webkit-scrollbar-button:increment,::-webkit-scrollbar-button {
+   display: none;
+} 
+
+::-webkit-scrollbar-thumb {
+   background-color: #5f7d8f;
+   // border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+   // border-radius: 10px;
+   background: #090112;  
 }
 

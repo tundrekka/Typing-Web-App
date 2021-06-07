@@ -16,7 +16,7 @@ export const AppRouter = () => {
          <div>
             <Switch>
                <Route exact path="/typing/:demoTextId" component={ ActivePage } />
-               <Route path="/" component={ HomePage } />
+               <Route exact path="/" component={ HomePage } />
                <Redirect to="/" />
             </Switch>
          </div>

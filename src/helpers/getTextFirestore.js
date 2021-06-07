@@ -14,7 +14,8 @@ export const loadTextsId = async() => {
       })
       return texts
    } catch ( error ) {
-      console.log( error )
+      console.error( error )
+      return []
    }
 
 }

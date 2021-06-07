@@ -18,9 +18,10 @@ export const TestLineBreak = React.memo( () => {
 
    return (
       <form onSubmit={handleSubmit}>
-         <textarea value={ textarea } onChange={handleChange} name="textarea" id="textarea" cols="30" rows="10"></textarea>
+         <textarea value={ textarea } onChange={handleChange} name="textarea" id="textarea" cols="70" rows="10"
+         ></textarea>
          <button id="submits" type="submit">SUBMIT</button>
-         <button tabIndex={0} id="focuss" type="submit">focus</button>
+         <button tabIndex={0} id="focuss" type="button">focus</button>
       </form>
    )
 })

@@ -7,7 +7,7 @@
    grid-template-columns: 75% 25%;
    justify-content: center;
    max-width: 1400px;
-   min-height: 60vh;
+   min-height: 35vh;
    width: 90vw;
    padding: .5rem;
    margin-top: 2rem;
@@ -37,10 +37,17 @@
    width: 100%;
    font-family: 'Montserrat', Geneva, Tahoma, sans-serif;
 }
+@media screen and (min-width: 1500px) {
+   .main-select {
+      font-size: 1.15rem;
+   }
+}
 
 // <TextContent />
 .text-content {
    line-height: 1.5;
+   width: 100%;
+   user-select: none;
 }
 .text-content p{
    word-spacing: 4px;
