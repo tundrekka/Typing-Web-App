@@ -4,7 +4,6 @@
 
 body {
    font-family: 'Montserrat', Geneva, Tahoma, sans-serif;
-   font-display: swap;
    background-image: linear-gradient( $primary, $primary-dark) ;
    box-sizing: border-box;
    color: $text-white;
@@ -22,9 +21,9 @@ body {
 a {
    text-decoration: none;
 }
-#root {
-   overflow-x: hidden;
-}
+// #root {
+//    overflow-x: hidden;
+// }
 
 // sobre-escribiendo estilos de material-ui
 button {

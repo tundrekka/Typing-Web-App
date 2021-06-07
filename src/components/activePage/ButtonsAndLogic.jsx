@@ -79,7 +79,7 @@ export const ButtonsAndLogic = () => {
       <>
          {component}
          <Button id="restart" onClick={handleRestart} variant="contained" color="secondary" >Restart</Button>
-         <Link to="/Typing-Web-App">
+         <Link to="/">
             <Button variant="contained" color="secondary" >Home</Button>
          </Link>
       </>
