@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Typing-Web-App/static/css/main.f6ed1c0c.chunk.css",
-    "main.js": "/Typing-Web-App/static/js/main.4d767d18.chunk.js",
-    "main.js.map": "/Typing-Web-App/static/js/main.4d767d18.chunk.js.map",
+    "main.js": "/Typing-Web-App/static/js/main.99f6c287.chunk.js",
+    "main.js.map": "/Typing-Web-App/static/js/main.99f6c287.chunk.js.map",
     "runtime-main.js": "/Typing-Web-App/static/js/runtime-main.7f8e85ce.js",
     "runtime-main.js.map": "/Typing-Web-App/static/js/runtime-main.7f8e85ce.js.map",
     "static/js/2.fd54dd0f.chunk.js": "/Typing-Web-App/static/js/2.fd54dd0f.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.7f8e85ce.js",
     "static/js/2.fd54dd0f.chunk.js",
     "static/css/main.f6ed1c0c.chunk.css",
-    "static/js/main.4d767d18.chunk.js"
+    "static/js/main.99f6c287.chunk.js"
   ]
 }
