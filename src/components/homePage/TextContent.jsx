@@ -18,7 +18,7 @@ export const TextContent = React.memo( () => {
    }
    return (
       <div className="text-content">
-         <p>Choose one demo-text from the above dropdown menu and click <b>Start Typing</b></p>
+         <p>🚀 Ready to boost your typing skills? Pick your favorite text from the menu above and dive into the ultimate typing challenge!</p>
          <h4 style={{ marginBottom: '.5rem', marginTop: '1.7rem' }}>Usage Guide</h4>
          <UsageGuide />
          <h4 onClick={ handleShow } style={ aboutStyles }>About the App</h4>
