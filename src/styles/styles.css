@@ -1,0 +1,329 @@
+body {
+  font-family: "Montserrat", Geneva, Tahoma, sans-serif;
+  background-image: linear-gradient(#220A32, #090112);
+  box-sizing: border-box;
+  color: rgba(246, 246, 246, 0.93);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+@media screen and (min-width: 1500px) {
+  html {
+    font-size: 1.15rem;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+button {
+  font-weight: 600 !important;
+  font-family: "Montserrat", Geneva, Tahoma, sans-serif !important;
+  padding: 0.42rem 1rem !important;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 15.5px;
+}
+
+::-webkit-scrollbar-button:increment, ::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5f7d8f;
+}
+
+::-webkit-scrollbar-track {
+  background: #090112;
+}
+
+.twa-navbar {
+  width: 100%;
+  background-color: #313638;
+  padding: 0.25rem;
+}
+
+.twa-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.twa-navbar-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.twa-navbar-container ul li a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+}
+.twa-navbar-container ul li a:hover {
+  background-color: rgba(11, 82, 91, 0.35);
+}
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 0.75rem;
+  max-width: 500px;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+  .sidebar {
+    justify-self: center;
+    width: 500px;
+    display: none;
+  }
+}
+.home-container {
+  background-color: #272640;
+  background-image: url(./img/purple-1.jpg);
+  border-radius: 0.75rem;
+  box-shadow: 1.5px 1.5px 16px 0 rgb(67, 39, 107);
+  display: grid;
+  grid-template-columns: 75% 25%;
+  justify-content: center;
+  max-width: 1400px;
+  min-height: 35vh;
+  width: 90vw;
+  padding: 0.5rem;
+  margin-top: 2rem;
+}
+
+.mainContent-container {
+  background-color: rgba(0, 0, 0, 0.725);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 1rem;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.main-select {
+  background-color: #090112;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
+  color: rgba(246, 246, 246, 0.93);
+  font-size: 0.9rem;
+  width: 100%;
+  font-family: "Montserrat", Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (min-width: 1500px) {
+  .main-select {
+    font-size: 1rem;
+  }
+}
+.text-content {
+  line-height: 1.5;
+  width: 100%;
+  user-select: none;
+}
+
+.text-content p {
+  word-spacing: 4px;
+}
+
+@media screen and (max-width: 992px) {
+  .home-container {
+    grid-template-columns: 100%;
+  }
+  .mainContent-container {
+    margin-right: 0;
+  }
+}
+.activePage-container {
+  border-radius: 0.75rem;
+  background-image: url(../img/purple-1.jpg);
+  max-width: 1200px;
+  min-height: 60vh;
+  width: 95vw;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 1.5px 1.5px 16px 0 rgb(67, 39, 107);
+}
+
+.textAndStats-container {
+  background-color: rgba(11, 82, 91, 0.35);
+  max-width: 1400px;
+  min-height: 50vh;
+  width: auto;
+  padding: 1rem;
+  padding-top: 0.8rem;
+  border-radius: 0.75rem;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(246, 246, 246, 0.93);
+  position: relative;
+}
+
+.statusMessage {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.typingText-container {
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  padding: 0.5rem;
+  min-height: 45vh;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: rgba(9, 1, 18, 0.902);
+  font-size: 1.4rem;
+  white-space: pre-wrap;
+}
+
+.typingText-container.activeContainer {
+  box-shadow: 0px 0px 6px 4.5px rgb(96.4818681319, 60.7076923077, 136.5923076923);
+}
+
+.success-text {
+  color: rgba(2, 233, 2, 0.988);
+}
+
+.fail-text {
+  color: rgba(195, 0, 0, 0.911);
+}
+
+.blank {
+  width: 3px;
+  height: 3px;
+  margin-inline: 0.3rem;
+  display: inline-block;
+  position: relative;
+  bottom: 5px;
+}
+
+.blank.success-text {
+  background-color: rgba(11, 193, 11, 0.621);
+}
+
+.blank.fail-text {
+  background-color: rgba(195, 0, 0, 0.911);
+}
+
+.next {
+  outline: 1px solid rgba(255, 255, 145, 0.638);
+}
+
+.line-break {
+  color: yellow;
+}
+
+.line-break > svg {
+  vertical-align: bottom;
+}
+
+.line-break.success-text {
+  color: lime;
+}
+
+.line-break.fail-text {
+  color: red;
+}
+
+.buttonsContainer {
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonsContainer button {
+  margin-inline: 0.3rem;
+}
+
+#start:focus-within {
+  box-shadow: 0px 0px 5px 2.5px rgb(98.9758241758, 62.2769230769, 140.1230769231);
+}
+
+.typingText-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.typingText-container::-webkit-scrollbar:vertical {
+  width: 10.5px;
+}
+
+.typingText-container::-webkit-scrollbar-button:increment, .typingText-container::-webkit-scrollbar-button {
+  display: none;
+}
+
+.typingText-container::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 5px;
+}
+
+.typingText-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.secondary-title-color {
+  color: rgba(179, 177, 177, 0.93);
+}
+.secondary-title-color-2 {
+  color: rgba(214, 214, 214, 0.93);
+}
+.secondary-text {
+  color: rgba(197, 196, 196, 0.93);
+}
+.secondary-text-2 {
+  color: rgba(246, 246, 246, 0.93);
+  font-size: 1.2rem;
+}
+.h1-main-title {
+  margin-bottom: 3.2rem;
+  margin-top: 1.5rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulseFort {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+.pulse-fort {
+  animation: pulseFort 1.2s infinite ease-in-out;
+}
+
+/*# sourceMappingURL=styles.css.map */
