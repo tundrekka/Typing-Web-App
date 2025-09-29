@@ -20,8 +20,8 @@ export const TextContent = React.memo( () => {
    }
    return (
       <div className="text-content">
-         <h2>Choose your demo-text and <b>Start Typing</b></h2>
-         <h4 className='secondary-title-color-2' style={{ marginBottom: '.5rem', marginTop: '1.7rem' }}>Usage Guide</h4>
+         <p>🚀 Ready to boost your typing skills? Pick your favorite text from the menu above and dive into the ultimate typing challenge!</p>
+         <h4 style={{ marginBottom: '.5rem', marginTop: '1.7rem' }}>Usage Guide</h4>
          <UsageGuide />
          <h4 className='secondary-title-color-2' onClick={ handleShow } style={ aboutStyles }>About the App <ArrowRightSharp /></h4>
          {
