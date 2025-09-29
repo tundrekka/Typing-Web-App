@@ -6,21 +6,34 @@ import { ReloadButton } from '../utils/ReloadButton'
 export const TypingText = React.memo( () => {
    const { text } = useSelector( state => state.texts )
    const { active, loading, errorMsg } = useSelector( state => state.ui )
-   const demoText = text.split( '' )
+   const textArr = text.split( '' )
+   const firstLetter = textArr.shift();
+   const demoText = textArr
+   
+   const hiddenInput = () => {
+      document.getElementById( 'hidden' ).focus()
+   };
 
    return (
       <>
-      <div className={`typingText-container ${ ( active ) && 'activeContainer'  }`} >
+      <div onClick={() => hiddenInput()} id="typ-container" className={`typingText-container ${ ( active ) && 'activeContainer'  }`} >
          {
             loading ? <p style={{ textAlign: 'center' }}>Loading...</p>
-            : demoText.map( ( letter, index ) => {
-               
-               if( letter === '\n' ) return <span className="line-break" key={index}><KeyboardReturn fontSize="small" /><br/></span>
-               // if( letter === '\t' ) return <span className="line-break" key={index}> \t</span>
-               if( letter === ' ' ) return <span className="blank" key={index}></span>
-               else return <span key={index}>{letter}</span> 
-               
-            })
+            : (
+               <>
+                  <span style={{display: "inline-block"}} className="next pulse-fort">{ firstLetter }</span>
+                  {
+                     demoText.map( ( letter, index ) => {
+                  
+                        if( letter === '\n' ) return <span className="line-break" key={index}><KeyboardReturn fontSize="small" /><br/></span>
+                        // if( letter === '\t' ) return <span className="line-break" key={index}> \t</span>
+                        if( letter === ' ' ) return <span className="blank" key={index}></span>
+                        else return <span key={index}>{letter}</span> 
+                        
+                     })
+                  }
+               </>
+            )
          }
       </div>
 

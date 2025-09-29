@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { About } from './About'
 import { UsageGuide } from './UsageGuide'
+import { ArrowRightSharp } from '@material-ui/icons'
 
 export const TextContent = React.memo( () => {
 
@@ -10,7 +11,8 @@ export const TextContent = React.memo( () => {
       marginBottom: '1.2rem', 
       marginTop: '2.1rem',
       cursor: 'pointer',
-      width: 'max-content' 
+      width: 'max-content',
+      display: 'flex',
    }
 
    const handleShow = () => {
@@ -18,10 +20,10 @@ export const TextContent = React.memo( () => {
    }
    return (
       <div className="text-content">
-         <p>Choose one demo-text from the above dropdown menu and click <b>Start Typing</b></p>
-         <h4 style={{ marginBottom: '.5rem', marginTop: '1.7rem' }}>Usage Guide</h4>
+         <h2>Choose your demo-text and <b>Start Typing</b></h2>
+         <h4 className='secondary-title-color-2' style={{ marginBottom: '.5rem', marginTop: '1.7rem' }}>Usage Guide</h4>
          <UsageGuide />
-         <h4 onClick={ handleShow } style={ aboutStyles }>About the App</h4>
+         <h4 className='secondary-title-color-2' onClick={ handleShow } style={ aboutStyles }>About the App <ArrowRightSharp /></h4>
          {
             showAbout 
             &&

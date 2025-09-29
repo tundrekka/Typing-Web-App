@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { restart, setActive, setFalse } from '../../actions/ui'
 import { logic } from '../../helpers/logic'
 
-export const ButtonsAndLogic = () => {
+export const   ButtonsAndLogic = () => {
    // Hooks
    const dispatch = useDispatch()
    const { finished, active } = useSelector( state => state.ui )
@@ -60,9 +60,14 @@ export const ButtonsAndLogic = () => {
       iterator.current = 0
       // reset and remove the classes for all the span elements
       const spans = [...container.children]
+      const firstSpan = spans.shift()
+      firstSpan.classList.remove( 'success-text' )
+      firstSpan.classList.remove( 'fail-text' )
+      firstSpan.classList.add( 'next' )
       spans.forEach( span => {
          span.classList.remove( 'success-text' )
          span.classList.remove( 'fail-text' )
+         span.classList.remove( 'next' )
       })
    }
 

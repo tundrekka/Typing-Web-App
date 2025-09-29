@@ -28,6 +28,9 @@ export const MainContent = () => {
          }
          
          <Dropdown />
+         {window.innerWidth < 600 && (
+            <div style={{marginTop: "2rem", color: "yellow"}}>Only available for PC's at this moment</div>
+         )}
          <TextContent />
          <StartButton />
       </div>

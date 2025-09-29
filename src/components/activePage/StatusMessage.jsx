@@ -6,13 +6,19 @@ export const StatusMessage = () => {
    const { active } = useSelector( state => state.ui )
    return (
       <div className="statusMessage">
+         
+         <p>
          {
             active
             ? 'Typing'
             : 'Start or Continue'
          }
+         </p>
+
+         {/* This input is thinked for mobile support */}
          <input
           type="text" name="hidden" id="hidden"
+          autoComplete='off'
           style={{
             position: 'absolute', 
             right: '15px', 

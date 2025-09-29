@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import { setFinalText, startLoadingTextById } from '../actions/texts'
-import { reloadRequest, setErrorMessage } from '../actions/ui'
+import { reloadRequest, setErrorMessage, setActive } from '../actions/ui'
+
 import { getTextFromStore } from '../helpers/getTextFromStore'
 import { ButtonsContainer } from './activePage/ButtonsContainer'
 import { TextAndStats } from './activePage/TextAndStats'
@@ -24,6 +25,7 @@ export const ActivePage = ({ history }) => {
             dispatch( setFinalText( text ) )
             dispatch( reloadRequest( false ) )
             dispatch( setErrorMessage( false ) )
+            dispatch( setActive() )
 
             return
          }

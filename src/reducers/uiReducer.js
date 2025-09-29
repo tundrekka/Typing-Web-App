@@ -7,7 +7,7 @@ import { types } from '../types/types';
    }
 */
 const initialState = {
-   active: false,
+   active: true,
    finished: false,
    lastPath: null,
    loading: false,
