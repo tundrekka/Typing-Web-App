@@ -5,5 +5,8 @@ export default defineConfig({
   plugins: [reactRefresh()],
   server: {
     open: true,
+    hmr: {
+      overlay: false,
+    },
   },
 });

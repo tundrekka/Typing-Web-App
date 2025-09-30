@@ -85,6 +85,7 @@
     ]
   },
   "devDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.52.3",
     "gh-pages": "^3.2.0"
   }
 }
