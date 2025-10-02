@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './LoginForm.css';
 
 const emailRegex = /^[\w-.]+@[\w-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex = {
@@ -63,39 +64,44 @@ export const LoginForm = () => {
   const isFormValid = !emailError && !passwordError && email && password;
 
   return (
-    <form className="login-form" onSubmit={handleSubmit} noValidate>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required
-        />
-        {emailError && <div className="error-message">{emailError}</div>}
-      </div>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          required
-        />
-        {passwordError && <div className="error-message">{passwordError}</div>}
-      </div>
-      <button type="submit" disabled={!isFormValid} className="login-btn">
-        Login
-      </button>
-      {submitted && (
-        <div className="success-message">Login disable but ready</div>
-      )}
-    </form>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit} noValidate>
+        <div className="input-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+          />
+          {emailError && <div className="error-message">{emailError}</div>}
+        </div>
+        <div className="input-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+          />
+          {passwordError && <div className="error-message">{passwordError}</div>}
+        </div>
+        <button type="submit" disabled={!isFormValid} className="login-button">
+          Login
+        </button>
+        {submitted && (
+          <div className="success-message">Login disable but ready</div>
+        )}
+        <div className="requirements-hint">
+          Password must be 8-15 characters, include at least one uppercase letter and one number.
+        </div>
+      </form>
+    </div>
   );
 };
