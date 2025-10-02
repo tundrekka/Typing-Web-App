@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LoginForm.css';
+import './loginform.css';
 
 const emailRegex = /^[\w-.]+@[\w-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex = {
